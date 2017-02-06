@@ -9,6 +9,7 @@ Battlemanager
     Implement a function that returns a battlemanager object that simulates battles between two or more commanders. The battlemanager should work with the following components:
 
 Components and functionality:
+
 Spell
 
     Has the following properties:
