@@ -241,70 +241,70 @@ Battlemanager
 
 Solution template
 
-function solve() {
-    'use strict';
-
-    const ERROR_MESSAGES = {
-        INVALID_NAME_TYPE: 'Name must be string!',
-        INVALID_NAME_LENGTH: 'Name must be between between 2 and 20 symbols long!',
-        INVALID_NAME_SYMBOLS: 'Name can contain only latin symbols and whitespaces!',
-        INVALID_MANA: 'Mana must be a positive integer number!',
-        INVALID_EFFECT: 'Effect must be a function with 1 parameter!',
-        INVALID_DAMAGE: 'Damage must be a positive number that is at most 100!',
-        INVALID_HEALTH: 'Health must be a positive number that is at most 200!',
-        INVALID_SPEED: 'Speed must be a positive number that is at most 100!',
-        INVALID_COUNT: 'Count must be a positive integer number!',
-        INVALID_SPELL_OBJECT: 'Passed objects must be Spell-like objects!',
-        NOT_ENOUGH_MANA: 'Not enough mana!',
-        TARGET_NOT_FOUND: 'Target not found!',
-        INVALID_BATTLE_PARTICIPANT: 'Battle participants must be ArmyUnit-like!'
-    };
-
-    // your implementation goes here
-
-    const battlemanager = {
-
-    };
-
-    return battlemanager;
-}
+    function solve() {
+        'use strict';
+    
+        const ERROR_MESSAGES = {
+            INVALID_NAME_TYPE: 'Name must be string!',
+            INVALID_NAME_LENGTH: 'Name must be between between 2 and 20 symbols long!',
+            INVALID_NAME_SYMBOLS: 'Name can contain only latin symbols and whitespaces!',
+            INVALID_MANA: 'Mana must be a positive integer number!',
+            INVALID_EFFECT: 'Effect must be a function with 1 parameter!',
+            INVALID_DAMAGE: 'Damage must be a positive number that is at most 100!',
+            INVALID_HEALTH: 'Health must be a positive number that is at most 200!',
+            INVALID_SPEED: 'Speed must be a positive number that is at most 100!',
+            INVALID_COUNT: 'Count must be a positive integer number!',
+            INVALID_SPELL_OBJECT: 'Passed objects must be Spell-like objects!',
+            NOT_ENOUGH_MANA: 'Not enough mana!',
+            TARGET_NOT_FOUND: 'Target not found!',
+            INVALID_BATTLE_PARTICIPANT: 'Battle participants must be ArmyUnit-like!'
+        };
+    
+        // your implementation goes here
+    
+        const battlemanager = {
+    
+        };
+    
+        return battlemanager;
+    }
 
 Example usage
 
-const battlemanager = solve();
-
-const cyki = battlemanager.getCommander('Cyki', 'good', 15),
-    koce = battlemanager.getCommander('Koce', 'good', 20);
-
-battlemanager.addCommanders(cyki, koce);
-
-const penguins = battlemanager.getArmyUnit({
-        name: 'Penguin Warriors',
-        alignment: 'neutral',
-        damage: 15,
-        health: 40,
-        speed: 10,
-        count: 120
-    }),
-    cavalry = battlemanager.getArmyUnit({
-        name: 'Horsemen',
-        alignment: 'good',
-        damage: 40,
-        health: 60,
-        speed: 50,
-        count: 50
-    });
-
-const openVim = battlemanager.getSpell('Open vim', 10, target => target.damage -= 5),
-    haste = battlemanager.getSpell('Haste', 5, target => target.speed += 5),
-    callReinforcements = battlemanager.getSpell('Reinforcements', 10, target => target.count += 5)
-
-battlemanager
-        .addArmyUnitTo('Cyki', penguins)
-        .addSpellsTo('Cyki', openVim, haste)
-        .addArmyUnitTo('Koce', cavalry)
-        .addSpellsTo('Koce', haste, callReinforcements)
-        .spellcast('Koce', 'Haste', cavalry.id)
-        .spellcast('Cyki', 'OpenVim', cavalry.id)
-        .battle(penguins, cavalry)
-        .spellcast('Koce', 'Reinforcements', cavalry.id);
+    const battlemanager = solve();
+    
+    const cyki = battlemanager.getCommander('Cyki', 'good', 15),
+        koce = battlemanager.getCommander('Koce', 'good', 20);
+    
+    battlemanager.addCommanders(cyki, koce);
+    
+    const penguins = battlemanager.getArmyUnit({
+            name: 'Penguin Warriors',
+            alignment: 'neutral',
+            damage: 15,
+            health: 40,
+            speed: 10,
+            count: 120
+        }),
+        cavalry = battlemanager.getArmyUnit({
+            name: 'Horsemen',
+            alignment: 'good',
+            damage: 40,
+            health: 60,
+            speed: 50,
+            count: 50
+        });
+    
+    const openVim = battlemanager.getSpell('Open vim', 10, target => target.damage -= 5),
+        haste = battlemanager.getSpell('Haste', 5, target => target.speed += 5),
+        callReinforcements = battlemanager.getSpell('Reinforcements', 10, target => target.count += 5)
+    
+    battlemanager
+            .addArmyUnitTo('Cyki', penguins)
+            .addSpellsTo('Cyki', openVim, haste)
+            .addArmyUnitTo('Koce', cavalry)
+            .addSpellsTo('Koce', haste, callReinforcements)
+            .spellcast('Koce', 'Haste', cavalry.id)
+            .spellcast('Cyki', 'OpenVim', cavalry.id)
+            .battle(penguins, cavalry)
+            .spellcast('Koce', 'Reinforcements', cavalry.id);
