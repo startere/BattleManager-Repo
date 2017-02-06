@@ -7,9 +7,6 @@ task test. To correct it just change the name of the spell('OpenVim') to the cor
 Battlemanager
 
     Implement a function that returns a battlemanager object that simulates battles between two or more commanders. The battlemanager should work with the following components:
-    You are given a sample usage of the battle manager in the demo.js file.
-    You are given the error messages in the solution template.
-    Run your tests locally by running the npm install and npm test commands in cmd or terminal.
 
 Components and functionality:
 Spell
